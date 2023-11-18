@@ -1,35 +1,41 @@
-// Load environment variables from .env file
-require('dotenv').config();
-
-// Import the express module
+// Import the required modules
 const express = require('express');
+const app = express(); // Create an instance of an Express app
 
-// Create an instance of express
-const app = express();
+// Set up the view engine configuration
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jsx'); // Set JSX as the view engine
+app.engine('jsx', require('express-react-views').createEngine()); // Use the express-react-views engine
 
-// Import the places controller
-const placesController = require('./controllers/places');
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
 
-// Define the home page route
-app.get('/', (req, res) => {
-  // Send a response when the home route is accessed
-  res.send('Hello World!');
-});
+// Import route controllers
+const placesController = require('./controllers/places'); // Controller for places-related routes
 
-// Use the places controller for any requests to /places
+// Use the places controller for the '/places' route segment
 app.use('/places', placesController);
 
-// Add a wildcard route for handling 404 errors
-// This should be the last route
-app.get('*', (req, res) => {
-  // Set the status code to 404 and send an HTML response
-  res.status(404).send('<h1>404 Page Not Found</h1>');
+// Define the root route of the application
+app.get('/', (req, res) => {
+    res.render('Home'); // Render the Home page using the JSX layout
 });
 
-// Start the server on the specified port or default to port 3000
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  // Log to the console to indicate that the server has started
-  console.log(`Server is running on port ${PORT}`);
+// Use the places controller for the '/places' route segment
+app.use('/places', placesController);
+
+
+
+// Define a wildcard route for handling 404 errors
+app.get('*', (req, res) => {
+  res.render('error404'); // Render the error404 view when a 404 error occurs
 });
-// practicing git commit from command line 
+
+
+// Define the port number as provided by the environment or default to 3000
+const PORT = process.env.PORT || 3000;
+
+// Start the server and listen on the specified port
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`); // Log a message when the server starts
+});

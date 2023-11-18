@@ -1,18 +1,16 @@
 const React = require('react');
+const Def = require('./default');
 
-function Def(html) {
-  return (
-    <html>
-      <head>
-        {/* Add any common elements like meta tags, title, link to CSS files */}
-      </head>
-      <body>
-        {/* You can add a header, navigation, or any other common components here */}
-        {html.children}
-        {/* You can add a footer or any other common components here */}
-      </body>
-    </html>
-  );
+function Home() {
+    return (
+        <Def>
+            <main>
+                <h1>HOME</h1>
+                {/* Other content for your home page */}
+            </main>
+        </Def>
+    );
 }
 
-module.exports = Def;
+module.exports = Home;
+
