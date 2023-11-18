@@ -1,0 +1,41 @@
+
+
+
+Project Setup Checklist
+
+##Navigate to the ‘code’ Folder
+
+##Open the directory where you keep your coding projects.
+##Create a New Project Folder
+
+##Name this folder according to your project.
+##Create ‘index.js’ File
+
+##Inside the new project folder, create a file named ‘index.js’.
+##Open Terminal & Navigate to Project
+
+##Launch your terminal application and navigate to the project folder.
+##Initialize npm
+
+##Run the command: npm init -y.
+##Install Express
+
+##Execute: npm install express.
+Open ‘index.js’ File
+
+Open the ‘index.js’ file for editing.
+Require Express
+
+At the top of ‘index.js’, write code to require Express.
+Initialize App Variable
+
+Set up the main app variable using Express.
+Create Home Page Route
+a. Call app.get().
+b. Use ‘/‘ as the path (first argument).
+c. Implement a callback function with req and res parameters.
+d. Within the callback, use res.send(‘hello world’).
+
+Start Server on Port 3000
+
+Use app.listen(3000) to start and keep the server open.
