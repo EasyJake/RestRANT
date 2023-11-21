@@ -6,11 +6,9 @@ const router = express.Router();
 
 // Define your route handlers using the 'router' instance.
 router.get('/', (req, res) => {
-// GET /places
-app.get('/', (req, res) => {
-  res.render('places/index')
-})
-;
+  // GET /places
+  res.render('places/index');
+});
 
 // More routes related to places can be added here
 
