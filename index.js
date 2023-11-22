@@ -1,6 +1,16 @@
 // Import the required modules
 const express = require('express');
+const path = require('path');
 const app = express(); // Create an instance of an Express app
+
+
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
+// ... rest of your Express app setup ...
+
 
 // Set up the view engine configuration
 app.set('views', __dirname + '/views');
@@ -30,6 +40,8 @@ app.use('/places', placesController);
 app.get('*', (req, res) => {
   res.render('error404'); // Render the error404 view when a 404 error occurs
 });
+
+
 
 
 // Define the port number as provided by the environment or default to 3000
