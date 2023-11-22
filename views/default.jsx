@@ -1,16 +1,45 @@
 const React = require('react');
-const Def = require('./default');
 
-function Home() {
+function Def({ children }) {
     return (
-        <Def>
-            <main>
-                <h1>HOME</h1>
-                {/* Other content for your home page */}
-            </main>
-        </Def>
+        <html>
+            <head>
+                {/* Meta tags, title, and other head elements */}
+                <title>RestRANT</title>
+            </head>
+            <body>
+                {/* Navigation and other elements common to all pages */}
+                {children}
+                {/* Footer and other elements common to all pages */}
+            </body>
+        </html>
     );
 }
 
-module.exports = Home;
+module.exports = Def;
 
+
+
+
+
+
+
+// const React = require('react');
+
+// function Def({ children }) {
+//     return (
+//         <html>
+//             <head>
+//                 {/* Meta tags, title, and other head elements */}
+//                 <title>RestRANT</title>
+//             </head>
+//             <body>
+//                 {/* Navigation and other elements common to all pages */}
+//                 {children}
+//                 {/* Footer and other elements common to all pages */}
+//             </body>
+//         </html>
+//     );
+// }
+
+// module.exports = Def;
