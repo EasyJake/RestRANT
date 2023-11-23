@@ -11,6 +11,16 @@ function Default({ children }) {
         {/* other head elements */}
       </head>
       <body>
+      <header>
+          <nav>
+          <ul>
+          <li><a href="/" className="btn btn-primary">Home</a></li>
+          <li><a href="/places" className="btn btn-primary">Places Page</a></li>
+          <li><a href="/places/new" className="btn btn-primary">Add Place</a></li>
+        </ul>
+          </nav>
+          <h1>REST-Rant</h1>
+        </header>
         {/* Navigation and other elements common to all pages */}
         {children}
         {/* Footer and other elements common to all pages */}

@@ -12,16 +12,17 @@ function Home() {
       <body>
         <header>
           <nav>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/places">Places</a></li>
-              <li><a href="/places/new">Add Place</a></li>
-            </ul>
+          <ul>
+          <li><a href="/" className="btn btn-primary">Home</a></li>
+          <li><a href="/places" className="btn btn-primary">Places Page</a></li>
+          <li><a href="/places/new" className="btn btn-primary">Add Place</a></li>
+        </ul>
           </nav>
-          <h1>home.jsx</h1>
+          <h1>RestRANT home.jsx</h1>
         </header>
         <main>
           <img src="http://placekitten.com/250/250" alt="Food Image" />
+          
           {/* Add more content here */}
         </main>
         <footer>
