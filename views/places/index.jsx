@@ -1,14 +1,26 @@
-import React from 'react';
-import Default from '../default'; // Correct path to your Default component
+const React = require('react');
+const Default = require('../default'); // Make sure this path is correct
 
-function Index() {
-  // Your JSX goes here
+function Index({ places }) {
   return (
     <Default>
-      <h1>Places Index Page</h1>
-      <p>This is the index page for places.</p>
+      <main>
+        <h1>Places</h1>
+        <div className="places-list">
+          {places.map((place, index) => (
+            <div key={index} className="place-item">
+              <img src={place.pic} alt={place.name} className="place-image" />
+              <div className="place-details">
+                <h2>{place.name}</h2>
+                <p className="place-cuisines">{place.cuisines}</p>
+                <p className="place-location">{`${place.city}, ${place.state}`}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </main>
     </Default>
   );
 }
 
-export default Index;
+module.exports = Index;

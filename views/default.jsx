@@ -5,7 +5,14 @@ function Default({ children }) {
     <html>
       <head>
         <title>RestRANT</title>
-        {/* other head elements */}
+        {/* other head elements */
+        
+        <link rel="stylesheet" href="/css/style.css" />
+
+        
+        }
+
+        
       </head>
       <body>
         {/* Navigation and other elements common to all pages */}

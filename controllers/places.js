@@ -2,8 +2,6 @@
 const express = require('express');
 const router = express.Router();
 
-// Define your route handlers using the 'router' instance.
-
 // GET /places
 router.get('/', (req, res) => {
   let places = [
@@ -21,13 +19,11 @@ router.get('/', (req, res) => {
       cuisines: 'Coffee, Bakery',
       pic: 'http://placekitten.com/250/250'
     }
-    // You can add more mock places here
+    // ... more places can be added here
   ];
-  
-  res.render('places/index', { places });
+  res.render('places/index', { places: places });
 });
 
-// ... other places routes ...
+// ... other routes ...
 
-// Export the router
 module.exports = router;
