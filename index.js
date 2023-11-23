@@ -1,21 +1,17 @@
 // Import the required modules
 const express = require('express');
 const path = require('path');
-const app = express(); // Create an instance of an Express app
 
+// Load environment variables from the .env file
+require('dotenv').config();
 
+// Create an instance of an Express app
+const app = express();
 
+// Set up the view engine configuration
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
-
-// ... rest of your Express app setup ...
-
-
-// Set up the view engine configuration
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jsx'); // Set JSX as the view engine
-app.engine('jsx', require('express-react-views').createEngine()); // Use the express-react-views engine
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
@@ -31,18 +27,10 @@ app.get('/', (req, res) => {
     res.render('Home'); // Render the Home page using the JSX layout
 });
 
-// Use the places controller for the '/places' route segment
-app.use('/places', placesController);
-
-
-
 // Define a wildcard route for handling 404 errors
 app.get('*', (req, res) => {
   res.render('error404'); // Render the error404 view when a 404 error occurs
 });
-
-
-
 
 // Define the port number as provided by the environment or default to 3000
 const PORT = process.env.PORT || 3000;
