@@ -5,14 +5,10 @@ function Default({ children }) {
     <html>
       <head>
         <title>RestRANT</title>
-        {/* other head elements */
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/style.css" />
 
-        
-        }
-
-        
+        {/* other head elements */}
       </head>
       <body>
         {/* Navigation and other elements common to all pages */}
@@ -22,5 +18,6 @@ function Default({ children }) {
     </html>
   );
 }
+
 
 module.exports = Default;

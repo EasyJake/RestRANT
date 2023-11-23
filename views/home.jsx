@@ -5,8 +5,9 @@ function Home() {
     <html>
       <head>
         <title>Home Page</title>
-        {/* Link to your separate CSS file */}
-        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/style.css" />
+
       </head>
       <body>
         <header>
@@ -17,7 +18,7 @@ function Home() {
               <li><a href="/places/new">Add Place</a></li>
             </ul>
           </nav>
-          <h1>REST-Rant</h1>
+          <h1>home.jsx</h1>
         </header>
         <main>
           <img src="http://placekitten.com/250/250" alt="Food Image" />
