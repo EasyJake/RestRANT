@@ -6,7 +6,7 @@ function Index({ places }) {
     <Default>
       <main>
     
-        <h1>Places</h1>
+        <h1>Places / index.js</h1>
         <div className="places-list">
           {places.map((place, index) => (
             <div key={index} className="place-item">

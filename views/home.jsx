@@ -18,10 +18,12 @@ function Home() {
           <li><a href="/places/new" className="btn btn-primary">Add Place</a></li>
         </ul>
           </nav>
-          <h1>RestRANT home.jsx</h1>
+          <h1>RestRANT/views/home.jsx</h1>
         </header>
         <main>
-          <img src="http://placekitten.com/250/250" alt="Food Image" />
+        <img src="/images/chia-fruit-drink.jpg" alt="Chia Fruit Drink" />
+
+        
           
           {/* Add more content here */}
         </main>
