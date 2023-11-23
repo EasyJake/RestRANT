@@ -1,0 +1,77 @@
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+main {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: white;
+}
+
+nav {
+  background-color: cornflowerblue;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 25px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.5em;
+}
+
+nav a:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+  color: cornflowerblue;
+}
+
+/* Custom Image Sizes */
+
+#home-image,
+#show-image {
+  width: 65%;
+  height: 45%;
+}
+
+.places-image {
+  width: 60%;
+  height: 50%;
+}
+
+/* Button Styles */
+
+/* Center the buttons horizontally in the row */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the Edit button */
+.edit-button {
+  margin-right: 10px;
+  background-color: navy;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+}
+
+/* Style the Delete button */
+.delete-button {
+  background-color: navy;
+  font: white;
+}
