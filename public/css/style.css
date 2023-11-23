@@ -119,4 +119,129 @@ img {
   margin-left: 1rem;
 }
 
+/* style.css content for a rounder look with red and yellow tones */
+
+/* Reset some basic elements */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply a font throughout the body */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff3e0; /* Light yellow background */
+}
+
+/* Styling for the header */
+header {
+  background-color: #ff6347; /* Tomato red */
+  color: #fff;
+  padding: 1rem 0;
+  border-bottom: 5px solid #ffa500; /* Orange border */
+  border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+  text-align: center;
+}
+
+/* Navigation bar with rounded links */
+nav {
+  background-color: #ffdead; /* Navajo white for a softer look */
+  padding: 0.5rem 0;
+  border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  color: #b22222; /* Firebrick color for text */
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 15px; /* Fully rounded edges for links */
+}
+
+/* Main content with padding */
+main {
+  padding: 1rem;
+  color: #333;
+}
+
+/* Footer with matching header styles */
+footer {
+  background-color: #ff6347;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 5px solid #ffa500;
+  border-radius: 15px 15px 0 0; /* Rounded top corners */
+  margin-top: 1rem;
+}
+
+/* Images with rounded corners */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Slightly rounded corners for images */
+}
+
+/* Buttons with a pill shape */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px; /* Fully rounded edges for a pill shape */
+  background-color: #ff4500; /* Orange red */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add a shadow to button to lift it off the page */
+.btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional utility classes for text alignment and color */
+.text-center {
+  text-align: center;
+}
+
+.text-red {
+  color: #b22222;
+}
+
+.text-yellow {
+  color: #ffd700;
+}
+
+/* Custom class for individual place items */
+.place-item {
+  border: 2px solid #ffa07a; /* Light salmon */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px; /* Rounded corners for place items */
+  background-color: #fffaf0; /* Floral white for item background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Additional styles for place details */
+.place-details {
+  margin-left: 1rem;
+}
+
+/* Ensure that all interactive elements have a hand cursor */
+button, a {
+  cursor: pointer;
+}
+
 /* Add other styles as needed based on the structure and classes used in your JSX files */
