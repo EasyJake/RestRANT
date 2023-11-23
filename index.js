@@ -24,12 +24,13 @@ app.use('/places', placesController);
 
 // Define the root route of the application
 app.get('/', (req, res) => {
-    res.render('Home'); // Render the Home page using the JSX layout
+    res.render('home'); // Render the Home page using the JSX layout (make sure the file name is 'home.jsx')
 });
 
 // Define a wildcard route for handling 404 errors
-app.get('*', (req, res) => {
-  res.render('error404'); // Render the error404 view when a 404 error occurs
+// This should be the last route.
+app.use((req, res) => {
+  res.status(404).render('error404'); // Render the error404 view when a 404 error occurs
 });
 
 // Define the port number as provided by the environment or default to 3000
