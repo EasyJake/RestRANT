@@ -5,6 +5,16 @@ function Index({ places }) {
   return (
     <Default>
       <main>
+      <header>
+          <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/places">Places</a></li>
+              <li><a href="/places/new">Add Place</a></li>
+            </ul>
+          </nav>
+          <h1>REST-Rant</h1>
+        </header>
         <h1>Places</h1>
         <div className="places-list">
           {places.map((place, index) => (
