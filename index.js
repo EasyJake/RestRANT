@@ -1,49 +1,59 @@
-// Import the required modules
+// Import required modules
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser'); // Include body-parser for form data handling
+const methodOverride = require('method-override'); // Support for _method (PUT, DELETE) in forms
+const mongoose = require('mongoose'); // MongoDB object modeling tool
+const Place = require('./models/places'); // Model for the "Place" collection
 
-// Load environment variables from the .env file
+// Load environment variables
 require('dotenv').config();
 
-// Create an instance of an Express app
+// Initialize Express application
 const app = express();
 
-// Set up the view engine configuration
+// Set the views directory and view engine for JSX
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
+// Middleware to serve static files (CSS, JS, images, etc.)
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Parse URL-encoded bodies (as sent by HTML forms)
-app.use(bodyParser.urlencoded({ extended: true })); // Use body-parser to parse form data
+// Middleware to parse URL-encoded bodies (form submissions)
+app.use(express.urlencoded({ extended: true }));
 
-// Import route controllers
-const placesController = require('./controllers/places'); // Controller for places-related routes
+// Middleware to support HTTP verbs (PUT, DELETE) where the client doesn't support it
+app.use(methodOverride('_method'));
 
-// Use the places controller for the '/places' route segment
+// Database connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+// Import router from the places controller
+const placesController = require('./controllers/places');
+
+// Use places controller for all "/places" routes
 app.use('/places', placesController);
 
-// Define the root route of the application
+// Route for the home page
 app.get('/', (req, res) => {
-    res.render('home'); // Render the Home page using the JSX layout (make sure the file name is 'home.jsx')
+  res.render('home'); // Renders the "home.jsx" file from the views directory
 });
 
-// Define a wildcard route for handling 404 errors
-// This should be the last route.
+// Wildcard route for handling 404 errors
 app.use((req, res) => {
-    res.status(404).render('error404'); // Render the error404 view when a 404 error occurs
+  res.status(404).render('error404'); // Renders "error404.jsx" for not found errors
 });
 
-// Define the port number as provided by the environment or default to 3000
+// Define the server port from environment variables or default to 3000
 const PORT = process.env.PORT || 3000;
 
-// Start the server and listen on the specified port
+// Start the server and listen on the provided port
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`); // Log a message when the server starts
-
-    console.log(`Your port is ${process.env.PORT}`);
-
+  console.log(`Server is running on port ${PORT}`); // Confirmation the server is running
 });
+
+// Exports the app for testing or flexibility in execution
+module.exports = app;
