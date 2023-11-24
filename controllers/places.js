@@ -2,8 +2,9 @@
 const express = require('express');
 const router = express.Router();
 
-// Mock data for places, ideally this would come from a database
+// Array holding mock data for places
 let places = [
+  // The places objects
   {
     name: 'H-Thai-ML',
     city: 'Seattle',
@@ -18,23 +19,34 @@ let places = [
     cuisines: 'Coffee, Bakery',
     pic: '/images/coffee-cat.jpg'
   }
-  // ... more places can be added here
+  // Additional places can be added here
 ];
 
-// GET /places - List all places
+// Route to display all places in the index view
 router.get('/', (req, res) => {
   res.render('places/index', { places: places });
 });
 
-// GET /places/:id/edit - Form to edit a specific place
+// Route to serve the form for editing a place's details
 router.get('/:id/edit', (req, res) => {
-  // ... logic to render edit page for place with req.params.id
+  // Logic to find the place by id and send that data to the edit form view
 });
 
-// GET /places/:id - Show details about a specific place
+// Route to display details of a specific place by id
 router.get('/:id', (req, res) => {
-  // ... logic to render show page for place with req.params.id
+  // Logic to find the place by id and send that data to the show view
 });
 
-// Export the router so it can be mounted in the main application file
+// Route to serve the form for adding a new place
+router.get('/new', (req, res) => {
+  res.render('places/new'); // Renders the form for adding a new place
+});
+
+// Route to handle the creation of a new place from form submission
+router.post('/', (req, res) => {
+  // Extract form data from req.body and add a new place object to the array
+  // Redirect to the places list or the new place's detail page after adding
+});
+
+// Export the router for mounting in the main application file
 module.exports = router;

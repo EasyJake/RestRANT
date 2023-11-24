@@ -16,6 +16,9 @@ app.engine('jsx', require('express-react-views').createEngine());
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
 
+// Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded({ extended: true })); // <--- This line should be here
+
 // Import route controllers
 const placesController = require('./controllers/places'); // Controller for places-related routes
 
@@ -30,7 +33,7 @@ app.get('/', (req, res) => {
 // Define a wildcard route for handling 404 errors
 // This should be the last route.
 app.use((req, res) => {
-  res.status(404).render('error404'); // Render the error404 view when a 404 error occurs
+    res.status(404).render('error404'); // Render the error404 view when a 404 error occurs
 });
 
 // Define the port number as provided by the environment or default to 3000
