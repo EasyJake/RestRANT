@@ -14,7 +14,10 @@ function Home() {
                   </div>
                 </div>
                 {/* <a href="/places" className="btn btn-primary">Places Page</a> */}
+            
+            <h2>home.jsx</h2>
             </main>
+
         </Def>
     )
 }

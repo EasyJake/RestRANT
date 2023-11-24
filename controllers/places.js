@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Array holding mock data for places
 let places = [
-  // The places objects
+  // Define the places objects here
   {
     name: 'H-Thai-ML',
     city: 'Seattle',
@@ -27,6 +27,12 @@ router.get('/', (req, res) => {
   res.render('places/index', { places: places });
 });
 
+// Route to serve the form for adding a new place
+// This needs to be above the '/:id' parameter route to prevent conflict
+router.get('/new', (req, res) => {
+  res.render('places/new'); // Renders the form for a new place
+});
+
 // Route to serve the form for editing a place's details
 router.get('/:id/edit', (req, res) => {
   // Logic to find the place by id and send that data to the edit form view
@@ -35,11 +41,6 @@ router.get('/:id/edit', (req, res) => {
 // Route to display details of a specific place by id
 router.get('/:id', (req, res) => {
   // Logic to find the place by id and send that data to the show view
-});
-
-// Route to serve the form for adding a new place
-router.get('/new', (req, res) => {
-  res.render('places/new'); // Renders the form for adding a new place
 });
 
 // Route to handle the creation of a new place from form submission

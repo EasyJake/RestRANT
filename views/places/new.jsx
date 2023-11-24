@@ -1,27 +1,19 @@
 const React = require('react');
-const Def = require('../default'); // Adjust the path as necessary.
+const Def = require('../default');
 
 function New() {
-  return (
-    <Def>
-      <main>
-        <h1>Add a New Place    <img src="public/images/coffee-cat.jpg" alt="Default Image" /> </h1>
-        <form method="POST" action="/places">
-          {/* Form inputs will go here */}
-       
+    return (
+        <Def>
+            <main>
+                <h1>Add a New Place</h1>
+                <form method="POST" action="/places">
+                    {/* Form inputs will go here */}
+                </form>
 
-        </form>
-      </main>
-    </Def>
-  );
-
-  <input type="text" name="name" required />
-
+                <h2>new.jsx</h2>
+            </main>
+        </Def>
+    );
 }
 
 module.exports = New;
-
-
-<form method="POST" action="/places">
-  {/* form inputs for name, city, state, cuisines, pic */}
-</form>
