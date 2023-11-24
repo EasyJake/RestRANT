@@ -1,6 +1,7 @@
 // Import the required modules
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser'); // Include body-parser for form data handling
 
 // Load environment variables from the .env file
 require('dotenv').config();
@@ -17,7 +18,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 app.use(express.static('public'));
 
 // Parse URL-encoded bodies (as sent by HTML forms)
-app.use(express.urlencoded({ extended: true })); // <--- This line should be here
+app.use(bodyParser.urlencoded({ extended: true })); // Use body-parser to parse form data
 
 // Import route controllers
 const placesController = require('./controllers/places'); // Controller for places-related routes

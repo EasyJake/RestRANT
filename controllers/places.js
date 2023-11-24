@@ -43,11 +43,22 @@ router.get('/:id', (req, res) => {
   // Logic to find the place by id and send that data to the show view
 });
 
-// Route to handle the creation of a new place from form submission
+// POST /places - Create a new place
 router.post('/', (req, res) => {
-  // Extract form data from req.body and add a new place object to the array
-  // Redirect to the places list or the new place's detail page after adding
+  let newPlace = {
+    name: req.body.name,
+    pic: req.body.pic,
+    cuisines: req.body.cuisines,
+    city: req.body.city,
+    state: req.body.state
+  };
+  // Add the new place to your data store (e.g., push to an array, save to a database)
+  // For now, we'll just pretend to add it to an array
+  places.push(newPlace);
+  // Redirect to the places list or the new place's detail page
+  res.redirect('/places');
 });
+
 
 // Export the router for mounting in the main application file
 module.exports = router;
