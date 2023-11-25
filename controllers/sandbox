@@ -1,22 +1,7 @@
-import React from 'react';
+# Correct the environment variable name and provide the full MongoDB URI
+MONGO_URI=mongodb://localhost:27017/places
 
-function Default({ children }) {
-    return (
-        <html>
-            <head>
-                {/* Meta tags, title, and other head elements */}
-                <title>RestRANT</title>
-            </head>
-            <body>
-                {/* Navigation and other elements common to all pages */}
-                {children}
-                {/* Footer and other elements common to all pages */}
-            </body>
-        </html>
-    );
-}
+# Set the port for your application to run on
+PORT=3000
 
-export default Default;
-views/places/new.jsx
-
-views/places/index.jsx
+# Add other environment variables as needed
