@@ -31,8 +31,9 @@ function Index({places}) { // Destructure places from props
         <div className="row">
           {placesFormatted}
         </div>
-        <h2>index.jsx</h2>
+      
       </main>
+      <footer>  <h2>index.jsx</h2> </footer>
     </Default>
   );
 }

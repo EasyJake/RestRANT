@@ -33,7 +33,7 @@ function New() {
                         <button type="submit">Add Place</button>
                     </fieldset>
                 </form>
-                <h2>new.jsx</h2>
+              <h2>views/places/new.jsx</h2>
             </main>
         </Def>
     );

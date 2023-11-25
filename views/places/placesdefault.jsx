@@ -29,6 +29,8 @@ function Default({ children }) {
         {children}
         {/* Footer and other elements common to all pages */}
       </body>
+
+      <footer>placesdefault.jsx</footer>
     </html>
   );
 }

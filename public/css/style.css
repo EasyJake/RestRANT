@@ -245,3 +245,13 @@ button, a {
 }
 
 /* Add other styles as needed based on the structure and classes used in your JSX files */
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed; /* Change to "fixed" to stick to the bottom */
+  bottom: 0;
+  width: 100%;
+}
