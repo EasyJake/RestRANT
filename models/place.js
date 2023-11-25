@@ -5,7 +5,8 @@ const placeSchema = new mongoose.Schema({
   // Name field with type String, required
   name: {
     type: String,
-    required: true
+    required: true,
+    maxlength: 100 // Assuming you want a max length on the name
   },
   // Picture field with type String, default value if not provided
   pic: {
@@ -25,23 +26,9 @@ const placeSchema = new mongoose.Schema({
   founded: {
     type: Number,
     min: [1673, 'Surely not before Columbus?'], // Validation: Year must be after 1673
-    max: new Date().getFullYear() // Validation: Year must not be in the future
+    max: [new Date().getFullYear(), 'Year must not be in the future'] // Validation: Year must not be in the future
   }
 });
-
-async function removePlaceById(placeId) {
-  try {
-    // Use the Mongoose model's findByIdAndRemove method
-    const result = await Place.findByIdAndRemove(placeId);
-    if (!result) {
-      throw new Error('Place not found'); // Handle the case where the place is not found
-    }
-    return result;
-  } catch (error) {
-    throw error; // Forward any errors to the calling code
-  }
-}
-
 
 // Compiling the schema into a model so it has methods to interact with the database
 const Place = mongoose.model('Place', placeSchema);

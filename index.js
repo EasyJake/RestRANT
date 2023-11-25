@@ -7,6 +7,7 @@ const Place = require('./models/place'); // Model for the "Place" collection
 
 // Load environment variables
 require('dotenv').config();
+console.log(process.env.MONGO_URI); // This should print your MongoDB URI
 
 // Initialize Express application
 const app = express();
