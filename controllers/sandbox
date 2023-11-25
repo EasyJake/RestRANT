@@ -5,3 +5,4 @@ MONGO_URI=mongodb://localhost:27017/places
 PORT=3000
 
 # Add other environment variables as needed
+
