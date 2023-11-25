@@ -1,5 +1,5 @@
 const React = require('react');
-const DefaultLayout = require('./default'); // Ensure this is the correct path to your Default layout
+const DefaultLayout = require('./placesdefault'); // Ensure this is the correct path to your Default layout
 
 function show (props) {
   return (
