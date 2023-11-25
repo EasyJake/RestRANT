@@ -29,6 +29,20 @@ const placeSchema = new mongoose.Schema({
   }
 });
 
+async function removePlaceById(placeId) {
+  try {
+    // Use the Mongoose model's findByIdAndRemove method
+    const result = await Place.findByIdAndRemove(placeId);
+    if (!result) {
+      throw new Error('Place not found'); // Handle the case where the place is not found
+    }
+    return result;
+  } catch (error) {
+    throw error; // Forward any errors to the calling code
+  }
+}
+
+
 // Compiling the schema into a model so it has methods to interact with the database
 const Place = mongoose.model('Place', placeSchema);
 
