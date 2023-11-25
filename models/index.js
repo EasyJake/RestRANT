@@ -5,5 +5,5 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true
 });
 
-module.exports.Place = require('./places');  // Assuming you have a Place model.
+module.exports.Place = require('./place');  // Assuming you have a Place model.
 // ... export other models as needed.

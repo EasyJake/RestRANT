@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override'); // Support for _method (PUT, DELETE) in forms
 const mongoose = require('mongoose'); // MongoDB object modeling tool
-const Place = require('./models/places'); // Model for the "Place" collection
+const Place = require('./models/place'); // Model for the "Place" collection
 
 // Load environment variables
 require('dotenv').config();

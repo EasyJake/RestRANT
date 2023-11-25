@@ -19,6 +19,15 @@ function Index({ places }) { // Destructure places from props
     <Default> {/* Use the correct name of the imported component */}
       <main>
         <h1>Places to Rant or Rave About</h1>
+        
+        <ul>
+          {places.map((place, index) => (
+            <li key={index}>
+              <a href={`/places/${place._id}`}>{place.name}</a>
+            </li>
+          ))}
+        </ul>
+
         <div className="row">
           {placesFormatted}
         </div>

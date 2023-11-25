@@ -1,148 +1,112 @@
-// // controllers/places.js
-// const express = require('express');
-// const router = express.Router();
-
-// // Array holding mock data for places
-// let places = [
-//   // Define the places objects here
-//   {
-//     name: 'H-Thai-ML',
-//     city: 'Seattle',
-//     state: 'WA',
-//     cuisines: 'Thai, Pan-Asian',
-//     pic: '/images/h-thai-ml-tables.png'
-//   },
-//   {
-//     name: 'Coding Cat Cafe',
-//     city: 'Phoenix',
-//     state: 'AZ',
-//     cuisines: 'Coffee, Bakery',
-//     pic: '/images/coffee-cat.jpg'
-//   }
-//   // Additional places can be added here
-// ];
-
-// // Route to display all places in the index view
-// router.get('/', (req, res) => {
-//   res.render('places/index', { places: places });
-// });
-
-// // Route to serve the form for adding a new place
-// // This needs to be above the '/:id' parameter route to prevent conflict
-// router.get('/new', (req, res) => {
-//   res.render('places/new'); // Renders the form for a new place
-// });
-
-// // Route to serve the form for editing a place's details
-// router.get('/:id/edit', (req, res) => {
-//   // Logic to find the place by id and send that data to the edit form view
-// });
-
-// // Route to display details of a specific place by id
-// router.get('/:id', (req, res) => {
-//   // Logic to find the place by id and send that data to the show view
-// });
-
-// // POST /places - Create a new place
-// router.post('/', (req, res) => {
-//   let newPlace = {
-//     name: req.body.name,
-//     pic: req.body.pic,
-//     cuisines: req.body.cuisines,
-//     city: req.body.city,
-//     state: req.body.state
-//   };
-//   // Add the new place to your data store (e.g., push to an array, save to a database)
-//   // For now, we'll just pretend to add it to an array
-//   places.push(newPlace);
-//   // Redirect to the places list or the new place's detail page
-//   res.redirect('/places');
-// });
-
-
-// // Export the router for mounting in the main application file
-// module.exports = router;
-
-
+// Import the Express framework and create a router object
 const express = require('express');
 const router = express.Router();
-const db = require('../models'); // Assuming this is where your Mongoose connection and model are set up
 
-// Index Route: List all places from the database
+// Import the database models, which includes the Place model
+const db = require('../models');
+
+// Define the Index Route to list all places
+// This route responds to GET requests on the '/places' path
 router.get('/', (req, res) => {
+  // Use the Place model to query the database for all place documents
   db.Place.find()
     .then(places => {
+      // Render the 'places/index' view, passing the places data to it
       res.render('places/index', { places });
     })
     .catch(err => {
+      // Log any errors to the console and render the 'error404' view
       console.error(err);
       res.render('error404');
     });
 });
 
-// New Route: Render form to create new place
+// Define the New Route to display a form for creating a new place
+// This route responds to GET requests on the '/places/new' path
 router.get('/new', (req, res) => {
+  // Render the 'places/new' view which contains the form
   res.render('places/new');
 });
 
-// Create Route: Handle submission of new place form
+// Define the Create Route to handle the new place form submission
+// This route responds to POST requests on the '/places' path
 router.post('/', (req, res) => {
+  // Create a new place document in the database using the form data
   db.Place.create(req.body)
     .then(() => {
+      // Upon successful creation, redirect the client to the '/places' path
       res.redirect('/places');
     })
     .catch(err => {
+      // Log any errors to the console and render the 'error404' view
       console.error(err);
       res.render('error404');
     });
 });
 
-// Show Route: Display details of a specific place by id
+// Define the Show Route to display details of a specific place
+// This route responds to GET requests on the '/places/:id' path
 router.get('/:id', (req, res) => {
+  // Find a single place document by its ID in the database
   db.Place.findById(req.params.id)
     .then(place => {
+      // Render the 'places/show' view, passing the found place data to it
       res.render('places/show', { place });
     })
     .catch(err => {
+      // Log any errors to the console and render the 'error404' view
       console.error(err);
       res.render('error404');
     });
 });
 
-// Edit Route: Render form to edit an existing place
+// Define the Edit Route to display a form for editing an existing place
+// This route responds to GET requests on the '/places/:id/edit' path
 router.get('/:id/edit', (req, res) => {
+  // Find a single place document by its ID to pre-populate the edit form
   db.Place.findById(req.params.id)
     .then(place => {
+      // Render the 'places/edit' view, passing the existing place data to it
       res.render('places/edit', { place });
     })
     .catch(err => {
+      // Log any errors to the console and render the 'error404' view
       console.error(err);
       res.render('error404');
     });
 });
 
-// Update Route: Handle submission of edit form
+// Define the Update Route to handle the edit form submission
+// This route responds to PUT requests on the '/places/:id' path
 router.put('/:id', (req, res) => {
+  // Update the specific place document with the form data
   db.Place.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then(() => {
+      // Redirect the client to the show page of the updated place
       res.redirect(`/places/${req.params.id}`);
     })
     .catch(err => {
+      // Log any errors to the console and render the 'error404' view
       console.error(err);
       res.render('error404');
     });
 });
 
-// Delete Route: Delete a specific place
+// Define the Delete Route to remove a specific place
+// This route responds to DELETE requests on the '/places/:id' path
 router.delete('/:id', (req, res) => {
+  // Remove the specific place document from the database
   db.Place.findByIdAndRemove(req.params.id)
     .then(() => {
+      // Redirect the client to the main list of places after deletion
       res.redirect('/places');
     })
     .catch(err => {
+      // Log any errors to the console and render the 'error404' view
       console.error(err);
       res.render('error404');
     });
 });
 
+// Export the router for use in the main application file
 module.exports = router;
