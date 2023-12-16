@@ -4,7 +4,7 @@ function Default({ children }) {
   return (
     <html>
       <head>
-        <title>RestRANT</title>
+        <title>places/placesdefault.jsx</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/style.css" />
 
@@ -19,7 +19,7 @@ function Default({ children }) {
       <li><a href="/places/new" className="btn btn-primary">Add Place</a></li>
       {/* <li><a href="/places/edit" className="btn btn-primary">Edit Place</a></li> <!-- If you have an Edit route -->
       <li><a href="/places/show" className="btn btn-primary">Show Place</a></li> <!-- If you have a Show route --> */}
-      // ... any other routes you have for places
+      
     </ul>
   </nav>
   <h1>REST-Rant</h1>
@@ -30,7 +30,7 @@ function Default({ children }) {
         {/* Footer and other elements common to all pages */}
       </body>
 
-      <footer>placesdefault.jsx</footer>
+      <footer></footer>
     </html>
   );
 }

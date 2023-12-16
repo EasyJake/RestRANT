@@ -1,7 +1,8 @@
 const React = require('react');
-const DefaultLayout = require('../default');
+const DefaultLayout = require('../default.jsx');
 
 class Edit extends React.Component {
+
   render() {
     const { place } = this.props;
     return (

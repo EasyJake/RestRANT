@@ -19,7 +19,7 @@ function Default({ children }) {
       <li><a href="/places/new" className="btn btn-primary">Add Place</a></li>
       {/* <li><a href="/places/edit" className="btn btn-primary">Edit Place</a></li> <!-- If you have an Edit route -->
       <li><a href="/places/show" className="btn btn-primary">Show Place</a></li> <!-- If you have a Show route --> */}
-      // ... any other routes you have for places
+
     </ul>
   </nav>
   <h1>REST-Rant</h1>
