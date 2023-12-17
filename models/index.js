@@ -6,12 +6,13 @@ const mongoose = require('mongoose');
 
 // Connect to MongoDB using the URI provided in the environment variables
 mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true, // Use the new URL parser for MongoDB connection strings
-  useUnifiedTopology: true // Use the unified topology for MongoDB connections
+  useNewUrlParser: true, // Deprecated - You may remove this line
+  useUnifiedTopology: true // Deprecated - You may remove this line
 });
 
-// Export the Place model from the place.js file
-module.exports.Place = require('./place'); // Assuming you have a Place model defined
+// Set mongoose's Promise to use global Promise
+mongoose.Promise = global.Promise;
 
-// Export other models as needed
-// module.exports.OtherModel = require('./otherModel');
+// Export the models
+module.exports.Place = require('./places'); // Ensure the file name matches exactly, including case
+module.exports.Comment = require('./comment'); // Ensure the file name matches exactly, including case
