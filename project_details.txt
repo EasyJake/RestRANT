@@ -1,8 +1,0 @@
-What is the path to the seeder file? this is not what I meant at all
-What validations need to be added to the Place model? (e.g., field:validation_type) 
-Describe the helper methods to be implemented: 
-Confirm the directory structure and paths for the project (e.g., models directory): 
-Provide Node.js and MongoDB versions being used: 
-List any third-party libraries crucial for Lesson 9: 
-Provide the environment variables that need to be set or modified: 
-How should the script handle potential duplication of data if run multiple times? 
