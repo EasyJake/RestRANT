@@ -7,6 +7,7 @@ class Edit extends React.Component {
     const { place } = this.props;
     return (
       <DefaultLayout>
+        <head><title>views/places.edit.jsx</title></head>
         <h1>Edit {place.name}</h1>
         <form action={`/places/${place._id}?_method=PUT`} method="POST">
           <div className="form-group">

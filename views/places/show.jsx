@@ -6,9 +6,9 @@ function show (props) {
     <DefaultLayout> {/* Use the layout you've defined for your application */}
       <main>
         <h1>{props.place.name}</h1> {/* Display the name of the place */}
-        <p className="text-center">{props.place.cuisines}</p> {/* Display the type of cuisines */}
+        <p className="text-left">{props.place.cuisines}</p> {/* Display the type of cuisines */}
         <img src={props.place.pic} alt={props.place.name} /> {/* Display an image of the place */}
-        <p className="text-center">
+        <p className="text-left">
           Located in {props.place.city}, {props.place.state}
         </p> {/* Display the location of the place */}
         <a href={`/places/${props.place._id}/edit`} className="btn btn-warning">Edit</a> {/* Link to the Edit form */}
@@ -22,3 +22,6 @@ function show (props) {
 }
 
 module.exports = show;
+
+
+

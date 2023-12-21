@@ -25,7 +25,7 @@ function Default({ children }) {
         {/* Content will be injected here from the children */}
         {children}
 
-        <footer></footer>
+     
       </body>
     </html>
   );

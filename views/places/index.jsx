@@ -17,6 +17,7 @@ function Index({places}) { // Destructure places from props
 
   return (
     <Default> {/* Use the correct name of the imported component */}
+    <head><title>places/index.jsx</title></head>
       <main>
         <h1>Places to Rant or Rave About</h1>
         
@@ -33,7 +34,7 @@ function Index({places}) { // Destructure places from props
         </div>
       
       </main>
-      <footer>  <h2>index.jsx</h2> </footer>
+      
     </Default>
   );
 }

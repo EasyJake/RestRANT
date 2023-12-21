@@ -49,3 +49,4 @@ const Place = mongoose.model('Place', placeSchema);
 
 // Export the Place model to make it accessible in other parts of the application
 module.exports = Place;
+

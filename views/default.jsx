@@ -28,7 +28,7 @@ function Default({ children }) {
         {/* Navigation and other elements common to all pages */}
         {children}
         {/* Footer and other elements common to all pages */}
-        <footer>default.jsx</footer>
+      
       </body>
       
     </html>

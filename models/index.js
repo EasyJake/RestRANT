@@ -16,3 +16,8 @@ mongoose.Promise = global.Promise;
 // Export the models
 module.exports.Place = require('./places'); // Ensure the file name matches exactly, including case
 module.exports.Comment = require('./comment'); // Ensure the file name matches exactly, including case
+// module.exports.Create = require('./create'); // Ensure the file name matches exactly, including case
+// module.exports.Delete = require('./delete'); // Ensure the file name matches exactly, including case
+// module.exports.Helpers = require('./helpers'); // Ensure the file name matches exactly, including case
+// module.exports.Comment = require('./comment'); // Ensure the file name matches exactly, including case
+// module.exports.Comment = require('./comment'); // Ensure the file name matches exactly, including case
