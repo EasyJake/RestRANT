@@ -14,6 +14,7 @@ function Places({ places }) {
                 <h2>{place.name}</h2>
                 <p className="place-cuisines">{place.cuisines}</p>
                 <p className="place-location">{`${place.city}, ${place.state}`}</p>
+                
               </div>
             </div>
           ))}

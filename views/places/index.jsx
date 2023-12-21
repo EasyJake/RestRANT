@@ -9,7 +9,9 @@ function Index({places}) { // Destructure places from props
         <p className="">{place.cuisines}</p>
         <p className="text-left">
           Located in {place.city}, {place.state}
+          
         </p>
+        
         <img src={place.pic} alt={place.name} className="img-fluid" />
        
       </div>
@@ -18,9 +20,10 @@ function Index({places}) { // Destructure places from props
 
   return (
     <Default> {/* Use the correct name of the imported component */}
-    <head><title>places/index.jsx</title></head>
+  
       <main>
         <h1>Places to Rant or Rave About</h1>
+        <h2>views/places/index.jsx</h2>
         
         {/* <ul>
           {places.map((place, index) => (
