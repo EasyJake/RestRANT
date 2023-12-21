@@ -20,6 +20,7 @@ function Default({ children }) {
             </ul>
           </nav>
           <h1>REST-Rant</h1>
+          <h1>views/places/placesdefault.jsx</h1>
         </header>
 
         {/* Content will be injected here from the children */}

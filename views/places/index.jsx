@@ -6,11 +6,12 @@ function Index({places}) { // Destructure places from props
     return (
       <div className="col-sm-6 my-3">
         <h2> <a href={`/places/${place.id}`}>{place.name}</a></h2>
-        <p className="text-center">{place.cuisines}</p>
-        <img src={place.pic} alt={place.name} className="img-fluid" />
-        <p className="text-center">
+        <p className="">{place.cuisines}</p>
+        <p className="text-left">
           Located in {place.city}, {place.state}
         </p>
+        <img src={place.pic} alt={place.name} className="img-fluid" />
+       
       </div>
     );
   });

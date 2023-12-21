@@ -7,6 +7,7 @@ function Home() {
         <Def>
             <main>
                 <h1>HOME</h1>
+                <h2>home.jsx</h2>
                 <div>
                   <img src="/images/chia-fruit-drink.jpg" alt="Chia Fruit Shake" />
                   <div>
@@ -15,7 +16,7 @@ function Home() {
                 </div>
                 {/* <a href="/places" className="btn btn-primary">Places Page</a> */}
             
-            <h2>home.jsx</h2>
+            
             </main>
 
         </Def>

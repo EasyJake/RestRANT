@@ -22,7 +22,7 @@ function Default({ children }) {
 
     </ul>
   </nav>
-  <h1>REST-Rant</h1>
+  <h1>REST-Rant - views/default.jsx</h1>
 </header>
 
         {/* Navigation and other elements common to all pages */}
