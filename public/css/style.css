@@ -61,7 +61,7 @@ main {
 
 /* Responsive Images inside Main */
 main img {
-  width: clamp(150px, 50vw, 800px);
+  width: clamp(150px, 30vw, 800px);
   height: auto; /* To maintain aspect ratio */
 }
 

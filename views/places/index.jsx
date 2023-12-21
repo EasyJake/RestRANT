@@ -1,8 +1,8 @@
 const React = require('react');
 const Default = require('../default'); // Make sure this path is correct
 
-function Index({places}) { // Destructure places from props
-  let placesFormatted = places.map((place ) => {
+function Index({ places }) { // Destructure places from props
+  let placesFormatted = places.map((place) => {
     return (
       <div className="col-sm-6 my-3">
         <h2> <a href={`/places/${place.id}`}>{place.name}</a></h2>
@@ -10,6 +10,10 @@ function Index({places}) { // Destructure places from props
         <p className="text-left">
           Located in {place.city}, {place.state}
           
+          
+        </p>
+        <p className="text-left">
+          Established in {place.founded}
         </p>
         
         <img src={place.pic} alt={place.name} className="img-fluid" />

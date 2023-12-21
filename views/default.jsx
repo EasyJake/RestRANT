@@ -26,6 +26,7 @@ function Default({ children }) {
 </header>
 
         {/* Navigation and other elements common to all pages */}
+        
         {children}
         {/* Footer and other elements common to all pages */}
       
