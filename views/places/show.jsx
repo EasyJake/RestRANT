@@ -12,7 +12,13 @@ function show (props) {
         <img src={props.place.pic} alt={props.place.name} /> {/* Display an image of the place */}
         <p className="text-left">
           Located in {props.place.city}, {props.place.state}
-          <p className="text-left">{props.place.founded}</p> {/* Display the type of cuisines */}
+         
+        </p> {/* Display the location of the place */}
+        
+        
+        <p className="text-left">
+          Established in {props.place.founded}
+          <p className="text-left"></p> {/* Display the type of cuisines */}
         </p> {/* Display the location of the place */}
       
         
