@@ -1,4 +1,0 @@
-"As a restaurant enthusiast, I need to view a list of restaurants so that I can choose one to read more about."
-"As a restaurant owner, I need to add my restaurant to the app so that I can share it with potential customers."
-"As a diner, I need to post reviews for restaurants so that I can share my dining experiences with others."
-
