@@ -1,16 +1,23 @@
-const React = require('react');
-const Default = require('./default'); // Adjust the path if necessary
+const React = require('react')
+const Def = require('./default')
 
-function Error404() {
-  return (
-    <Default>
-   
-      <main>
-        <h1>404: PAGE NOT FOUND views/places/error404.jsx</h1>
-        <p>Oops, sorry, we can't find this page!</p>
-      </main>
-    </Default>
-  );
+function error404 () {
+return (
+    <Def>
+        <main>
+            <h1>404: PAGE NOT FOUND</h1>
+            <p>Oops, sorry, we can't find this page!</p>
+            <div>
+                <img src="/images/puppy-cute-404.jpg" alt="cute puppy" style={{width: "50%"}}/>
+                <div>
+                    Photo by <a href="AUTHOR_LINK">Michael G</a> on <a href="UNSPLASH_LINK">Unsplash</a>
+                </div>
+            </div>
+            
+        </main>
+    </Def>
+    )
 }
 
-module.exports = Error404;
+
+module.exports = error404

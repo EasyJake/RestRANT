@@ -1,44 +1,81 @@
-const React = require('react');
-const DefaultLayout = require('../default.jsx');
+const React = require("react");
+const Def = require("../default");
 
-class Edit extends React.Component {
+// Example of rendering the component with the data prop
+// const data=[]
 
-  render() {
-    const { place } = this.props;
+function edit_form({place}) {
+    // console.log(place.place)
     return (
-      <DefaultLayout>
-        <head><title>views/places.edit.jsx</title></head>
-        <h1>Edit {place.name}</h1>
-        <form action={`/places/${place._id}?_method=PUT`} method="POST">
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input className="form-control" id="name" name="name" type="text" defaultValue={place.name} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="pic">Picture URL</label>
-            <input className="form-control" id="pic" name="pic" type="text" defaultValue={place.pic || '/images/default.jpg'} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="cuisines">Cuisines</label>
-            <input className="form-control" id="cuisines" name="cuisines" type="text" defaultValue={place.cuisines} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="city">City</label>
-            <input className="form-control" id="city" name="city" type="text" defaultValue={place.city} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="state">State</label>
-            <input className="form-control" id="state" name="state" type="text" defaultValue={place.state} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="founded">Founded Year</label>
-            <input className="form-control" id="founded" name="founded" type="number" defaultValue={place.founded} min="1673" max={new Date().getFullYear()} />
-          </div>
-          <button type="submit" className="btn btn-primary">Update Place</button>
-        </form>
-      </DefaultLayout>
+        <Def>
+            <main>
+                <h1>Edit Place</h1>
+                <form method="POST" action={`/places/${place.id}?_method=PUT`}>
+                    <div className="form-group">
+                        <label htmlFor="name">Place Name</label>
+                        <input
+                            className="form-control"
+                            id="name"
+                            name="name"
+                            value={place.name}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="pic">Place Picture</label>
+                        <input
+                            className="form-control"
+                            id="pic"
+                            name="pic"
+                            value={place.pic}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="city">City</label>
+                        <input
+                            className="form-control"
+                            id="city"
+                            name="city"
+                            value={place.city}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="state">State</label>
+                        <input
+                            className="form-control"
+                            id="state"
+                            name="state"
+                            value={place.state}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="cuisines">Cuisines</label>
+                        <input
+                            className="form-control"
+                            id="cuisines"
+                            name="cuisines"
+                            value={place.cuisines}
+                            required
+                        />
+                    </div>
+                    <div className="form-group col-sm-4">
+                        <label htmlFor="founded">Founded Year</label>
+                        <input className="form-control"
+                            id="founded"
+                            name="founded"
+                            value={place.founded}
+                        />
+                    </div>
+                    <input
+                        className="btn btn-primary"
+                        type="submit"
+                        value="Update Place"
+                    />
+                </form>
+            </main>
+        </Def>
     );
-  }
 }
 
-module.exports = Edit;
+module.exports = edit_form;
